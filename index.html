@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伸缩式动态搜索框</title>
+ 
+    <!--引用search图标样式-->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/
+css/font-awesome.min.css" rel="stylesheet">
+ 
+    <style type="text/css">
+ 
+        /* 初始化页面 */
+        body{
+            /* 去除边框 */
+            padding:0;
+            /* 100%窗口高度 */
+            height:100%;
+            /* 设置页面渐变背景颜色 */
+            background:linear-gradient(to right,#e3eeff,#f3e7e9);
+        }
+ 
+        .vistor_box{
+            /* 绝对定位，元素水平垂直居中 */
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            /* 设置背景颜色 */
+            background-color:#2f3640;
+            /* 设置图标默认状态下大小，圆形 */
+            height:40px;
+            padding:10px;
+            /* 设置圆角 */
+            border-radius:40px;
+        }
+        .vistor_text{
+            /* 清除默认样式 */
+            border:none;
+            background:none;
+            outline:none;
+            float:left;
+            padding:0;
+            color:#fff;
+            /* 设置文字样式 */
+            font-size:16px;
+            line-height:40px;
+            width:0;
+            /* 动画过渡 */
+            transition:0.5s;
+        }
+        
+        /* 先设置默认状态，40px 的黑色圆形搜索框，中心为外网导入的红色 search 图标； */
+        .vistor_btn{
+            color:#e84118;
+            float:right;
+            /* 设置默认状态下搜索框样式 */
+            width:40px;
+            height:40px;
+            /* 圆角 */
+            border-radius:50%;
+            background-color:#2f3640;
+            /* 弹性布局，水平垂直居中 */
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            cursor:pointer;
+            /* 动画过渡 */
+            transition:0.5s;
+        }
+        
+        /* 当鼠标移入时，触发动画效果，动画过渡为 0.5s，搜索框展开至 200px，
+并使搜索图标颜色变换；鼠标移出时，搜索框恢复默认状态。 */
+        /* 鼠标移入时，触发效果，搜索框展开 */
+        .vistor_box:hover .search_text{
+            width:200px;
+            padding:0 6px;
+        }
+        /* 鼠标移入时，搜索图标背景颜色变化 */
+        .search_box:hover .search_btn{
+            background-color:#fff;
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+<div class="search_box">
+    <!--input搜索框-->
+    <input type="text" class="search_text" placeholder="What do you want?">
+    <a class="search_btn">
+        <!--引用search图标-->
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </a>
+</div>
+ 
+</body>
+</html>
